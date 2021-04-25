@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2. Подсчет площади трапеции.</title>
+    <script type="module">
+        import getNumberFromUserByPrompt from './modules/getNumberFromUserByPrompt.js';
+        import calculateTrapeziumArea from './modules/calculateTrapeziumArea.js';
+
+        const a = getNumberFromUserByPrompt('Вводите длину основания трапеции: a');
+        const b = getNumberFromUserByPrompt('Вводите длину основания трапеции: b');
+        const h = getNumberFromUserByPrompt('Вводите высоту трапеции: ');
+
+        alert(`Площадь трапеции будет равна: ${calculateTrapeziumArea(a, b, h)}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

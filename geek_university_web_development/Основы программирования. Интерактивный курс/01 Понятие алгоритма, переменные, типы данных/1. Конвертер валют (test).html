@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Конвертер валют.</title>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine-3.7.1/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine-3.7.1/jasmine.css">
+    <script type="text/javascript" src="jasmine-3.7.1/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine-3.7.1/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine-3.7.1/boot.js"></script>
+
+    <script type="module">
+        import convertExchangeRates from './modules/convertExchangeRates.js';
+
+        describe('Проверка конвертера валют ', () => {
+
+            it('1 доллар стоит 75.09 рублей. Можно купить 13.32 $ на 1000 ₽', () => {
+                expect(convertExchangeRates(1000, 75.09)).toEqual(13.32);
+            });
+
+            it('1 евро стоит 90.47 рублей. Можно купить 11.05 € на 1000 ₽', () => {
+                expect(convertExchangeRates(1000, 90.47)).toEqual(11.05);
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2. Подсчет площади трапеции.</title>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine-3.7.1/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine-3.7.1/jasmine.css">
+    <script type="text/javascript" src="jasmine-3.7.1/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine-3.7.1/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine-3.7.1/boot.js"></script>
+
+    <script type="module">
+        import calculateTrapeziumArea from './modules/calculateTrapeziumArea.js';
+
+        describe('Проверка расчета площади трапеции ', () => {
+
+            it('a = 10, b = 20, h = 2. S = 30', () => {
+                expect(calculateTrapeziumArea(10, 20, 2)).toEqual(30);
+            });
+
+            it('a = 21.1, b = 11.6, h = 10. S = 163.5', () => {
+                expect(calculateTrapeziumArea(21.1, 11.6, 10)).toEqual(163.5);
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
