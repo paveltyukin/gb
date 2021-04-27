@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3. Дописать игру "Угадай число"</title>
+</head>
+<body>
+<script type="module">
+    let users = [
+            {
+                'name': 'Пользователь 1',
+                'cnt': 0,
+                'win': false
+            },
+            {
+                'name': 'Пользователь 2',
+                'cnt': 0,
+                'win': false
+            }
+        ],
+        tryCount = 1;
+
+    // Нечетные tryCount - отгадывает 1 игрок
+    // Четные tryCount - отгадывает 2 игрок
+    // 111 - выход из цикла
+    const randomNumber = +(Math.random() * 100).toFixed();
+
+    do {
+        const whoAnswer = users[tryCount%2],
+            answerNumber = +prompt(whoAnswer.name + ', введите число');
+
+        whoAnswer.cnt += 1;
+
+        if (answerNumber === 111) {
+            break;
+        }
+
+        if (answerNumber === randomNumber) {
+            whoAnswer.win = true;
+            alert("Поздравляю, Вы угалали " + whoAnswer.name);
+            break;
+        }
+        else if (answerNumber > randomNumber) {
+            alert(`Вы ввели большое число. Общая попытка ${tryCount}`);
+        }
+        else if (answerNumber < randomNumber) {
+            alert(`Вы ввели маленькое число. Общая попытка ${tryCount}`);
+        }
+
+        tryCount++;
+    }
+    while(true);
+
+    const winner = users.filter(user => user.win);
+    let resultInfo = '';
+    if (winner.length) {
+        resultInfo += winner[0].name + ' отгадал число ' + randomNumber + ' c ' + winner[0].cnt + ' попытки';
+    }
+    else {
+        resultInfo += 'Никто не отгадал число ' + randomNumber;
+    }
+    alert(resultInfo);
+</script>
+</body>
+</html>

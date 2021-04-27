@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2. Банковская программа.</title>
+</head>
+<body>
+<script type="module">
+    const userDeposit = +prompt('Введите сумму вклада'),
+        userPercent = +prompt('Введите процент');
+
+    let resultDeposit = userDeposit,
+        deposits = '';
+
+    for (let i = 0; i < 5; i++) {
+        const oneYearDeposit = resultDeposit * userPercent / 100;
+        resultDeposit += oneYearDeposit;
+        let year = i !== 0 ? 'лет' : 'года';
+        deposits  += `Размер вклада после ${i+1} ${year} ${resultDeposit.toFixed(2)}\n`;
+    }
+
+    deposits += `Вклад после 5 лет будет составлять: ${resultDeposit.toFixed(2)}`;
+    alert(deposits);
+</script>
+</body>
+</html>

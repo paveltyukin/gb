@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Игра в загадки.</title>
+</head>
+<body>
+<script type="module">
+
+    const riddles = [
+        {
+            'text': 'Скатерть бела. Весь мир одела.',
+            'answer': ['Зима', 'зима']
+        },
+        {
+            'text': 'Что за кузнецы в лесу куют?',
+            'answer': ['Дятел', 'дятел']
+        },
+        {
+            'text': 'Кругом вода, а с питьем беда.',
+            'answer': ['Море', 'море']
+        },
+        {
+            'text': 'К вечеру умирает, по утру оживает.',
+            'answer': ['День', 'день']
+        },
+    ];
+    let correctAnswers = 0;
+
+    for (let i = 0; i < riddles.length; i++) {
+        const userAnswer = prompt(riddles[i].text).trim();
+        if (riddles[i]['answer'].includes(userAnswer)) {
+            alert('Вы угадали');
+            correctAnswers++;
+        }
+        else {
+            alert('Неправильный ответ. Правильный ответ: ' + riddles[i]['answer'][0]);
+        }
+    }
+
+    alert(`Количество правильных ответов: ${correctAnswers}`);
+
+</script>
+</body>
+</html>
