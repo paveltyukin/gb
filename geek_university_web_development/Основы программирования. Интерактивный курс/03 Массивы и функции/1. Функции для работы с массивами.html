@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03 Массивы и функции</title>
+</head>
+<body>
+<p>a. Написать функцию, которая принимает в качестве параметра число n. Результатом работы функции является массив из N элементов со значениями 1, 2, 3… n.</p>
+<script type="text/javascript">
+    function generateArray(n) {
+        const returnArray = [];
+        if (n  > 0) {
+            for (let i = 0; i < n; i++) {
+                returnArray.push(i + 1);
+            }
+        }
+
+        return returnArray;
+    }
+</script>
+<p>b. Написать функцию, которая принимает массив чисел. Результатом работы функции является сумма чисел этого массива.</p>
+<script type="text/javascript">
+    const sumArray = (list) => list.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+</script>
+<p>c. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает максимальное число.</p>
+<script type="text/javascript">
+    const maxNumberInArray = (list) => list.reduce((accumulator, currentValue) => {
+        return accumulator > currentValue ? accumulator : currentValue;
+    });
+</script>
+<p>d. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает минимальное число.</p>
+<script type="text/javascript">
+    const minNumberInArray = (list) => list.reduce((accumulator, currentValue) => accumulator > currentValue ? currentValue : accumulator);
+</script>
+<p>f. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива.
+    Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное.</p>
+<script type="text/javascript">
+    const evenNumberInArray = (list) => list.filter((num) => !(num % 2));
+</script>
+</body>
+</html>

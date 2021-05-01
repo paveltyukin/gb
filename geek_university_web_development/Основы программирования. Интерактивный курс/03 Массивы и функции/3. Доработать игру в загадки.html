@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3. Доработать игру в загадки:</title>
+</head>
+<body>
+<script type="text/javascript">
+    const riddles = [
+        {
+            'text': 'Скатерть бела. Весь мир одела.',
+            'answer': ['Зима', 'зима', 'Pbvf', 'pbvf']
+        },
+        {
+            'text': 'Что за кузнецы в лесу куют?',
+            'answer': ['Дятел', 'дятел']
+        },
+        {
+            'text': 'Кругом вода, а с питьем беда.',
+            'answer': ['Море', 'море']
+        },
+        {
+            'text': 'К вечеру умирает, по утру оживает.',
+            'answer': ['День', 'день']
+        },
+    ];
+    let correctAnswers = 0;
+
+    riddles.reduce((accum, currentValue, i) => {
+        const userAnswer = prompt(riddles[i].text).trim();
+        if (riddles[i]['answer'].includes(userAnswer)) {
+            alert('Вы угадали');
+            correctAnswers++;
+        }
+        else {
+            alert('Неправильный ответ. Правильный ответ: ' + riddles[i]['answer'][0]);
+        }
+    }, correctAnswers);
+
+    alert(`Количество правильных ответов: ${correctAnswers}`);
+</script>
+</body>
+</html>
