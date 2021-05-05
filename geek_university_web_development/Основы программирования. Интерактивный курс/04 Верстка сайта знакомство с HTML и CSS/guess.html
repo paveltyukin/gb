@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+		const answer = +(Math.random() * 100).toFixed(),
+			maxTryCount = 2,
+			users = [
+				{name: 'Игрок 1', cnt: 0, id: 'player1'},
+				{name: 'Игрок 2', cnt: 0, id: 'player2'},
+			];
+
+		let tryCount = 0;
+
+		function readInt() {
+			const number = document.getElementById("userAnswer").value;
+			return parseInt(number);
+		}
+
+		function write(text) {
+			document.getElementById("info").innerHTML = text;
+		}
+
+		function customWrite(id, text) {
+			document.getElementById(id).innerHTML = text;
+		}
+
+		function hide(id) {
+			document.getElementById(id).style.display = "none";
+		}
+
+		function guess() {
+			users[tryCount%2].cnt++;
+
+			const userAnswer = readInt();
+			if (users[tryCount%2].cnt > maxTryCount) {
+				write("Вы проиграли<br>Правильный ответ: " + answer);
+				hide("button");
+				hide("userAnswer");
+				return false;
+			}
+			else if (userAnswer === answer) {
+				write(`<b>Поздравляю, ${users[tryCount%2].name} угадали!</b>`);
+				hide("button");
+				hide("userAnswer");
+			}
+			else if (userAnswer > answer) {
+				write("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 1 до 100");
+			}
+			else if(userAnswer < answer) {
+				write("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 1 до 100");
+			}
+			tryCount++;
+			rebuildInfo();
+		}
+
+		function rebuildInfo() {
+			const el1 = document.getElementById(users[0].id),
+					el2 = document.getElementById(users[1].id),
+					userEl = document.getElementById('player');
+			el1.innerHTML = users[0].name + ': <b>' + (maxTryCount - users[0].cnt) + '</b>';
+			el2.innerHTML = users[1].name + ': <b>' + (maxTryCount - users[1].cnt) + '</b>';
+
+			userEl.innerHTML = users[tryCount%2].name;
+
+			if (users[0].cnt >= maxTryCount && users[1].cnt >= maxTryCount) {
+				write("Вы проиграли<br>Правильный ответ: " + answer);
+				hide("button");
+				hide("userAnswer");
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			rebuildInfo();
+		});
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="puzzle.html">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+		<a href="password_generator.html">Генератор случайных паролей</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра угадайка</h1>
+
+			<div class="box">
+
+				<p id="info">Угадайте число от 0 до 100</p>
+				<p>Попыток осталось: <span id="player1"></span>; <span id="player2"></span></p>
+				<p>Ваш ответ <span id="player"></span></p>
+				<input type="text" id="userAnswer">
+				<br>
+				<a href="#" onClick="guess();" id="button">Начать</a>				
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; Vasily Pupkin
+<div>
+
+
+</body>
+</html>
