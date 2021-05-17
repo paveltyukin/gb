@@ -33,7 +33,7 @@ body {
     width: 510px;
 }
 
-.bottom-heading-text {
+.top__text {
     width: 425px;
 }
 
@@ -54,7 +54,7 @@ body {
     color: #1F3F68;
 }
 
-.card-wrapper {
+.card-box {
     display: flex;
     justify-content: space-between;
 }
@@ -97,9 +97,14 @@ input, textarea {
 
 .footer__info-text {
     list-style-type: none;
+    flex-grow: 1;
 }
 
 .form-inner {
     display: flex;
     justify-content: space-between;
+}
+
+.main {
+    display: flex;
 }
