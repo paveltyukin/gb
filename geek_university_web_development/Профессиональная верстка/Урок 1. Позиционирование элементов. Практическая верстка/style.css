@@ -68,10 +68,28 @@
 }
 
 .sliderTextWrapper {
-    background-image: url('images/slider__text.svg');
-    width: 374px;
-    height: 74px;
+  display: flex;
+  flex-direction: column;
+}
 
+.sliderTextFirstRow {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+}
+
+.sliderTextSecondRow {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.sliderTextSecondRow .pink {
+  color: #F16D7F;
 }
 
 .sales {
