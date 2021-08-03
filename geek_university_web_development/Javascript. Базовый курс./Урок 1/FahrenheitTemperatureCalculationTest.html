@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест: Расчет температору по Фаренгейту</title>
+
+    <link rel="shortcut icon" type="image/png" href="../jasmine-standalone-3.8.0/lib/jasmine-3.8.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../jasmine-standalone-3.8.0/lib/jasmine-3.8.0/jasmine.css">
+    <script type="text/javascript" src="../jasmine-standalone-3.8.0/lib/jasmine-3.8.0/jasmine.js"></script>
+    <script type="text/javascript" src="../jasmine-standalone-3.8.0/lib/jasmine-3.8.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="../jasmine-standalone-3.8.0/lib/jasmine-3.8.0/boot.js"></script>
+</head>
+<body>
+<script type="module">
+    import { calculateFahrenheit } from './calculateFahrenheit.js';
+
+    describe('Расчет температоры по Фаренгейту', () => {
+
+        it(`-10 °C === 14.00 °F`, () => {
+            expect(calculateFahrenheit(-10)).toBe(14);
+        });
+
+        it(`0 °C === 32.00 °F`, () => {
+            expect(calculateFahrenheit(0)).toBe(32);
+        });
+
+        it(`10 °C === 50.00 °F`, () => {
+            expect(calculateFahrenheit(10)).toBe(50);
+        });
+    });
+</script>
+</body>
+</html>
