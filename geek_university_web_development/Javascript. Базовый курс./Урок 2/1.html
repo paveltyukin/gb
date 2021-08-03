@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    'use strict'
+
+    let a = 1, b = 1, c, d;
+
+    c = ++a;
+    // c = 2
+    // а = 2
+    // Инкремент, префиксная форма,
+    // сначала значение в переменной а увеличится на 1
+    // затем это значение присвоится с
+    console.log(`c = ${c}`);
+
+    d = b++;
+    // d = 1
+    // b = 2
+    // Инкремент, постфиксная форма,
+    // сначала вернется значение, которое было в а (1)
+    // затем значение в переменной а увеличится на 1
+    console.log(`d = ${d}`);
+
+    c = 2 + ++a;
+    // c = 5
+    // а = 3
+    // Инкремент, префиксная форма,
+    // сначала в переменной а увеличится на 1,
+    // затем получившееся значение будет складываться с 2
+    console.log(`c = ${c}`)
+
+    d = 2 + b++;
+    // d = 4
+    // b = 3
+    // Инкремент, постфиксная форма,
+    // 2 будет складываться с b (2), потом b увеличится на 1
+    console.log(`d = ${d}`);
+
+    // а = 3
+    console.log(`a = ${a}`);
+    // b = 3
+    console.log(`b = ${b}`);
+
+</script>
+</body>
+</html>

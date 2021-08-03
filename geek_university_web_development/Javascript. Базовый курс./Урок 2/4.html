@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="module">
+    'use strict'
+
+    /*
+Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их
+и возвращать результат.
+Обязательно использовать оператор return.
+    * */
+    import { calculateSumOfNumbers } from './4.js';
+    import { calculateSubtractionOfNumbers } from './4.js';
+    import { calculateMultiplicationOfNumbers } from './4.js';
+    import { calculateDivisionOfNumbers } from './4.js';
+
+    console.log(calculateSumOfNumbers(2, 5));
+    console.log(calculateSubtractionOfNumbers(2, 5));
+    console.log(calculateMultiplicationOfNumbers(2, 5));
+    console.log(calculateDivisionOfNumbers(1, 5));
+</script>
+</body>
+</html>
