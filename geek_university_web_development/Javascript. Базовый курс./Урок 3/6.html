@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // Нарисовать горку с помощью console.log (используя цикл for), как показано на рисунке,
+    //     только у вашей горки должно быть 20 рядов, а не 5:
+    // x
+    // xx
+    // xxx
+    // xxxx
+    // xxxxx
+    const getX = (i) => {
+        const arr = [];
+        arr.length = i;
+        arr.fill('x');
+        return arr.join('');
+    }
+
+    let strX = 'x'
+    for (let i = 1; i <= 20; i++) {
+        // console.log(i, strX)
+        strX += 'x';
+        console.log(i, getX(i))
+    }
+
+
+</script>
+</body>
+</html>
