@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Lesson 4</title>
+    <style>
+        input:not(.validateBtn) {
+            width: 100%;
+            border: 1px solid grey;
+        }
+        .error {
+            width: 100%;
+            padding: 0;
+
+            font-size: 80%;
+            color: white;
+            background-color: #900;
+            border-radius: 0 0 5px 5px;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            width: 250px;
+        }
+    </style>
 </head>
 <body>
-<script src="script.js"></script>
+<!--<script src="script.js"></script>-->
+<div id="long_text">
+    'Lorem Ipsum' is simply dummy text of the printing and 'typesetting industry'.
+    'Lorem Ipsum' has been the industry's standard dummy text ever since the '1500s',
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    It has survived not only five centuries, but also the leap into electronic typesetting,
+    remaining essentially unchanged.
+    'Lorem aren't,  doesn't, isn't, don't,'
+    It was popularised in the 1960s with the release of Letraset sheets containing 'Lorem Ipsum' passages,
+    and more recently with desktop publishing software like Aldus PageMaker including versions of 'Lorem Ipsum'.
+</div>
+<form class="formWithValidation">
+    <label>
+        <input type="text" name="phone" autocomplete="off" class="phone field">
+    </label>
+    <br>
+    <label>
+        <input type="text" name="email" autocomplete="off" class="email field">
+    </label>
+    <br>
+    <label>
+        <input type="text" name="description" autocomplete="off" class="description field">
+    </label>
+    <br>
+    <input type="submit" class='validateBtn' value='Отправить' />
+</form>
+<script type="module">
+    import { Validation } from './homework/Validation.js';
+
+    const v = new Validation();
+</script>
 </body>
 </html>
